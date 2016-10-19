@@ -41,6 +41,6 @@ GLOBAL OPTIONS:
     (Ansible) Distribute IS
 
 ```
-#Example for Openshift hellper
+#Example for Openshift helper
 /openshift-helper is edit --file=example.json --name=python27 --latest=true
 ```
