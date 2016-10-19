@@ -1,4 +1,4 @@
-# Openmshift Hellper
+# Openshift Hellper
 Small utility to help organise CI&CD flow of openshift objects
 
 ### Build
