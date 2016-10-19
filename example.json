@@ -1,0 +1,139 @@
+{
+       "kind": "ImageStreamList",
+       "apiVersion": "v1",
+       "metadata": {},
+       "items": [
+       {
+              "kind": "ImageStream",
+              "apiVersion": "v1",
+              "metadata": {
+                     "name": "python27",
+                     "creationTimestamp": null,
+                     "annotations": {
+                           "openshift.io/image.insecureRepository": "true"
+                     }
+              },
+              "spec": {
+                     "tags": [{
+                           "name": "20161012",
+                           "from": {
+                                  "kind": "DockerImage",
+                                  "name": "{{openshift_docker_additional_registries}}/paas/python-s2i-2.7:20161012"
+                           },
+                           "importPolicy": {
+                                  "insecure": true
+                           }
+                     },
+                     {
+                           "name": "latest",
+                           "from": {
+                                  "kind": "ImageStreamTag",
+                                  "name": "20161012"
+                            },
+                           "importPolicy": {
+                                  "insecure": true
+                           }
+                     }]
+              }
+       },
+       {
+              "kind": "ImageStream",
+              "apiVersion": "v1",
+              "metadata": {
+                     "name": "python33",
+                     "creationTimestamp": null,
+                     "annotations": {
+                           "openshift.io/image.insecureRepository": "true"
+                     }
+              },
+              "spec": {
+                     "tags": [{
+                           "name": "20161012",
+                           "from": {
+                                  "kind": "DockerImage",
+                                  "name": "{{openshift_docker_additional_registries}}/paas/python-s2i-3.3:20161012"
+                           },
+                           "importPolicy": {
+                                  "insecure": true
+                           }
+                     },
+                     {
+                           "name": "latest",
+                           "from": {
+                                  "kind": "ImageStreamTag",
+                                  "name": "20161012"
+                           },
+                           "importPolicy": {
+                                  "insecure": true
+                           }
+                     }]
+              }
+       },
+       {
+              "kind": "ImageStream",
+              "apiVersion": "v1",
+              "metadata": {
+                     "name": "python34",
+                     "creationTimestamp": null,
+                     "annotations": {
+                           "openshift.io/image.insecureRepository": "true"
+                     }
+              },
+              "spec": {
+                     "tags": [{
+                           "name": "20161012",
+                           "from": {
+                                  "kind": "DockerImage",
+                                  "name": "{{openshift_docker_additional_registries}}/paas/python-s2i-3.4:20161012"
+                           },
+                           "importPolicy": {
+                                  "insecure": true
+                           }
+                     },
+                     {
+                           "name": "latest",
+                           "from": {
+                                  "kind": "ImageStreamTag",
+                                  "name": "20161012"
+                           },
+                           "importPolicy": {
+                                  "insecure": true
+                           }
+                     }]
+              }
+       },
+       {
+              "kind": "ImageStream",
+              "apiVersion": "v1",
+              "metadata": {
+                     "name": "python35",
+                     "creationTimestamp": null,
+                     "annotations": {
+                           "openshift.io/image.insecureRepository": "true"
+                     }
+              },
+              "spec": {
+                     "tags": [{
+                           "name": "20161012",
+                           "from": {
+                                  "kind": "DockerImage",
+                                  "name": "{{openshift_docker_additional_registries}}/paas/python-s2i-3.5:20161012"
+                           },
+                           "importPolicy": {
+                                  "insecure": true
+                           }
+                     },
+                     {
+                           "name": "latest",
+                           "from": {
+                                  "kind": "ImageStreamTag",
+                                  "name": "20161012"
+                           },
+                           "importPolicy": {
+                                  "insecure": true
+                           }
+                     }]
+              }
+       }
+       ]
+}
