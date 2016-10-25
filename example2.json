@@ -1,0 +1,76 @@
+{
+	"APIVersion": "v1",
+	"kind": "ImageStreamList",
+	"metadata": {},
+	"items": [
+		{
+			"apiVersion": "v1",
+			"kind": "ImageStream",
+			"metadata": {
+				"name": "java8",
+				"annotations": {
+					"openshift.io/image.insecureRepository": "true"
+				}
+			},
+			"spec": {
+				"tags": [
+					{
+						"name": "latest",
+						"annotations": {},
+						"from": {
+							"kind": "ImageStreamTag",
+							"name": "20161025"
+						},
+						"importPolicy": {
+							"insecure": true
+						}
+					},
+					{
+						"name": "20161012",
+						"annotations": {},
+						"from": {
+							"kind": "DockerImage",
+							"name": "{{openshift_docker_additional_registries}}/paas/java-s2i:20161012"
+						},
+						"importPolicy": {
+							"insecure": true
+						}
+					},
+					{
+						"name": "20161024",
+						"annotations": {},
+						"from": {
+							"kind": "DockerImage",
+							"name": "{{openshift_docker_additional_registries}}/paas/java-s2i:20161024"
+						},
+						"importPolicy": {
+							"insecure": true
+						}
+					},
+					{
+						"name": "20161023",
+						"annotations": {},
+						"from": {
+							"kind": "DockerImage",
+							"name": "{{openshift_docker_additional_registries}}/paas/java-s2i:20161023"
+						},
+						"importPolicy": {
+							"insecure": true
+						}
+					},
+					{
+						"name": "20161025",
+						"annotations": {},
+						"from": {
+							"kind": "DockerImage",
+							"name": "{{openshift_docker_additional_registries}}/paas/java-s2i:20161025"
+						},
+						"importPolicy": {
+							"insecure": true
+						}
+					}
+				]
+			}
+		}
+	]
+}

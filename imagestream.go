@@ -47,6 +47,7 @@ func (is *ImageStream) createNewRecord(tagstr, name string, latest bool) {
 	log.Debugf("Copy %s component for replacement", name)
 	var item Items
 	var tag Tags
+	found := false
 	for _, v := range is.Items {
 		if v.ItemsMetadata.Name == name {
 			log.Debugf("Component %s found in List, copy it", name)
@@ -60,9 +61,9 @@ func (is *ImageStream) createNewRecord(tagstr, name string, latest bool) {
 		log.Debug("Create new TAG to ammend existing list")
 		//we need any tag with reference to dockerImage.
 		for _, v := range item.Spec.Tags {
-			if v.From.Kind == "DockerImage" {
-				tag = item.Spec.Tags[0]
-
+			if v.From.Kind == "DockerImage" && found == false {
+				tag = v
+				log.Debug(tag)
 				//update copied element with new details
 				if len(tag.Name) == 0 {
 					log.Fatal("Error in reading copied tag")
@@ -73,6 +74,7 @@ func (is *ImageStream) createNewRecord(tagstr, name string, latest bool) {
 					//append existing list with new element
 					item.Spec.Tags = Extend(item.Spec.Tags, tag)
 				}
+				found = true
 			}
 		}
 		//if latest set to true we set latest to point to new date
