@@ -37,28 +37,6 @@
 						}
 					},
 					{
-						"name": "20161024",
-						"annotations": {},
-						"from": {
-							"kind": "DockerImage",
-							"name": "{{openshift_docker_additional_registries}}/paas/java-s2i:20161024"
-						},
-						"importPolicy": {
-							"insecure": true
-						}
-					},
-					{
-						"name": "20161023",
-						"annotations": {},
-						"from": {
-							"kind": "DockerImage",
-							"name": "{{openshift_docker_additional_registries}}/paas/java-s2i:20161023"
-						},
-						"importPolicy": {
-							"insecure": true
-						}
-					},
-					{
 						"name": "20161025",
 						"annotations": {},
 						"from": {

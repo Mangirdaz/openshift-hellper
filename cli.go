@@ -12,7 +12,7 @@ func initCLI() {
 	app := cli.NewApp()
 
 	app.Name = "Openshift Hellper"
-	app.Version = "0.0.1"
+	app.Version = "0.0.2"
 	app.EnableBashCompletion = true
 	app.Compiled = time.Now()
 	app.Authors = []cli.Author{
